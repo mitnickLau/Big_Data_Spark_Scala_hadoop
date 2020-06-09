@@ -17,6 +17,12 @@
         <module>ct_consumer</module>
         <module>ct_consumer_coprocessor</module>
         <module>ct_analysis</module>
+        <module>ct_cache</module>
+        <module>ct_web</module>
+        <module>ct_web</module>
+        <module>ct_web</module>
+        <module>ct_web</module>
+        <module>ct_web</module>
     </modules>
 
 

@@ -32,9 +32,7 @@ public class MySQLBeanOutputFormat extends OutputFormat<AnalysisKey, AnalysisVal
             connection = JDBCUtil.getConnection();
             PreparedStatement pstat = null;
             ResultSet rs = null;
-
             try {
-
                 String queryUserSql = "select id, tel from ct_user";
                 pstat = connection.prepareStatement(queryUserSql);
                 rs = pstat.executeQuery();
@@ -43,9 +41,7 @@ public class MySQLBeanOutputFormat extends OutputFormat<AnalysisKey, AnalysisVal
                     String tel = rs.getString(2);
                     userMap.put(tel, id);
                 }
-
                 rs.close();
-
                 String queryDateSql = "select id, year, month, day from ct_date";
                 pstat = connection.prepareStatement(queryDateSql);
                 rs = pstat.executeQuery();
@@ -62,7 +58,6 @@ public class MySQLBeanOutputFormat extends OutputFormat<AnalysisKey, AnalysisVal
                     }
                     dateMap.put(year + month + day, id);
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {

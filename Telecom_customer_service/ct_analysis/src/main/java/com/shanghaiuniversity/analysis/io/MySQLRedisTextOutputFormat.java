@@ -31,6 +31,7 @@ public class MySQLRedisTextOutputFormat extends OutputFormat<Text, Text> {
 
         /**
          * 输出数据
+         *
          * @param key
          * @param value
          * @throws IOException
@@ -55,13 +56,13 @@ public class MySQLRedisTextOutputFormat extends OutputFormat<Text, Text> {
 
                 pstat.setInt(1, Integer.parseInt(jedis.hget("ct_user", tel)));
                 pstat.setInt(2, Integer.parseInt(jedis.hget("ct_date", date)));
-                pstat.setInt(3, Integer.parseInt(sumCall) );
+                pstat.setInt(3, Integer.parseInt(sumCall));
                 pstat.setInt(4, Integer.parseInt(sumDuration));
                 pstat.executeUpdate();
             } catch (SQLException e) {
                 e.printStackTrace();
             } finally {
-                if ( pstat != null ) {
+                if (pstat != null) {
                     try {
                         pstat.close();
                     } catch (SQLException e) {
@@ -73,12 +74,13 @@ public class MySQLRedisTextOutputFormat extends OutputFormat<Text, Text> {
 
         /**
          * 释放资源
+         *
          * @param context
          * @throws IOException
          * @throws InterruptedException
          */
         public void close(TaskAttemptContext context) throws IOException, InterruptedException {
-            if ( connection != null ) {
+            if (connection != null) {
                 try {
                     connection.close();
                 } catch (SQLException e) {
@@ -86,7 +88,7 @@ public class MySQLRedisTextOutputFormat extends OutputFormat<Text, Text> {
                 }
             }
 
-            if ( jedis != null ) {
+            if (jedis != null) {
                 jedis.close();
             }
         }
@@ -99,11 +101,14 @@ public class MySQLRedisTextOutputFormat extends OutputFormat<Text, Text> {
     public void checkOutputSpecs(JobContext context) throws IOException, InterruptedException {
 
     }
+
     private FileOutputCommitter committer = null;
+
     public static Path getOutputPath(JobContext job) {
         String name = job.getConfiguration().get(FileOutputFormat.OUTDIR);
-        return name == null ? null: new Path(name);
+        return name == null ? null : new Path(name);
     }
+
     public OutputCommitter getOutputCommitter(TaskAttemptContext context) throws IOException, InterruptedException {
         if (committer == null) {
             Path output = getOutputPath(context);
