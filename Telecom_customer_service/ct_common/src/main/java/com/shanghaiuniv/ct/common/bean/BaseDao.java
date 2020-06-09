@@ -81,7 +81,7 @@ public abstract class BaseDao {
                     new HColumnDescriptor(family);
             tableDescriptor.addFamily(columnDescriptor);
         }
-
+        //hbase中的协处理器
         if (coprocessorClass != null && !"".equals(coprocessorClass)) {
             tableDescriptor.addCoprocessor(coprocessorClass);
         }
@@ -189,7 +189,6 @@ public abstract class BaseDao {
      * @param obj
      * @throws Exception
      */
-
     protected void putData(Object obj) throws Exception {
 
         // 反射

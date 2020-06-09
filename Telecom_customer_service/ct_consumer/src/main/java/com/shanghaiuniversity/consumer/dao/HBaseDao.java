@@ -20,7 +20,7 @@ public class HBaseDao extends BaseDao {
     public void init() throws Exception {
         start();
         createNamepsaceNX(Names.NAMESPACE.getValue());
-        createTableXX(Names.TABLE.getValue(), "com.shanghaiuniv.ct.consumer.coprocessor.InsertCalleeCoprocessor", ValueConstant.REGION_COUNT, Names.CF_CALLER.getValue(), Names.CF_CALLEE.getValue());
+        createTableXX(Names.TABLE.getValue(), "com.shanghaiuniversity.coprocessor.InsertCalleeCoprocessor", ValueConstant.REGION_COUNT, Names.CF_CALLER.getValue(), Names.CF_CALLEE.getValue());
         end();
     }
 
@@ -32,6 +32,7 @@ public class HBaseDao extends BaseDao {
      */
     public void insertData(Calllog log) throws Exception {
         log.setRowkey(genRegionNum(log.getCall1(), log.getCalltime()) + "_" + log.getCall1() + "_" + log.getCalltime() + "_" + log.getCall2() + "_" + log.getDuration());
+
         putData(log);
     }
 
@@ -64,13 +65,11 @@ public class HBaseDao extends BaseDao {
         //      3-2）字符串反转 ：1312312334342， 1312312334345
         //           电话号码：133 + 0123 + 4567
         //      3-3) 计算分区号：hashMap
-
         // rowkey = regionNum + call1 + time + call2 + duration
         String rowkey = genRegionNum(call1, calltime) + "_" + call1 + "_" + calltime + "_" + call2 + "_" + duration + "_1";
 
         // 主叫用户
         Put put = new Put(Bytes.toBytes(rowkey));
-
         byte[] family = Bytes.toBytes(Names.CF_CALLER.getValue());
 
         put.addColumn(family, Bytes.toBytes("call1"), Bytes.toBytes(call1));
@@ -94,7 +93,6 @@ public class HBaseDao extends BaseDao {
         List<Put> puts = new ArrayList<Put>();
         puts.add(put);
         //puts.add(calleePut);
-
         putData(Names.TABLE.getValue(), puts);
 
     }
