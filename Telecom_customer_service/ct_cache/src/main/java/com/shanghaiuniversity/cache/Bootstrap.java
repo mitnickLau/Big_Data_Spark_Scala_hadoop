@@ -78,8 +78,8 @@ public class Bootstrap {
                 }
             }
         }
-//        System.out.println(userMap.size());
-//        System.out.println(dateMap.size());
+//        System.output.println(userMap.size());
+//        System.output.println(dateMap.size());
         // 向redis中存储数据
         Jedis jedis = new Jedis("linux4", 6379);
         Iterator<String> keyIterator = userMap.keySet().iterator();

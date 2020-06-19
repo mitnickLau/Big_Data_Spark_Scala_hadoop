@@ -1417,12 +1417,12 @@ if (typeof jQuery === 'undefined') {
 
     clearTimeout(self.timeout)
 
-    self.hoverState = 'out'
+    self.hoverState = 'output'
 
     if (!self.options.delay || !self.options.delay.hide) return self.hide()
 
     self.timeout = setTimeout(function () {
-      if (self.hoverState == 'out') self.hide()
+      if (self.hoverState == 'output') self.hide()
     }, self.options.delay.hide)
   }
 
@@ -1491,7 +1491,7 @@ if (typeof jQuery === 'undefined') {
         that.$element.trigger('shown.bs.' + that.type)
         that.hoverState = null
 
-        if (prevHoverState == 'out') that.leave(that)
+        if (prevHoverState == 'output') that.leave(that)
       }
 
       $.support.transition && this.$tip.hasClass('fade') ?

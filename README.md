@@ -7,7 +7,6 @@
     2HDFS的读写原理和存储原理
     3Mapper Reduce的运行原理
 在telecom_customer_service项目说明
-
 难点:
     1数据处理的在多分数据存储的时候采用的Hbase中的协处理器的数据消费的优化方案。
     2做好相关的消费数据的逻辑设计，还有就是的flume-kafka-Hbase的逻辑。

@@ -42,7 +42,7 @@ body {
   height: 500px;
   margin-bottom: 60px;
 }
-/* Since positioning the image, we need to help out the caption */
+/* Since positioning the image, we need to help output the caption */
 .carousel-caption {
   z-index: 10;
 }
@@ -82,10 +82,10 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 80px 0; /* Space output the Bootstrap <hr> more */
 }
 
-/* Thin out the marketing headings */
+/* Thin output the marketing headings */
 .featurette-heading {
   font-weight: 300;
   line-height: 1;

@@ -181,8 +181,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // Main process have three entries: `setOption`, `dispatchAction` and `resize`,
 	    // where they must not be invoked nestedly, except the only case: invoke
 	    // dispatchAction with updateMethod "none" in main process.
-	    // This flag is used to carry out this rule.
-	    // All events will be triggered out side main process (i.e. when !this[IN_MAIN_PROCESS]).
+	    // This flag is used to carry output this rule.
+	    // All events will be triggered output side main process (i.e. when !this[IN_MAIN_PROCESS]).
 	    var IN_MAIN_PROCESS = '__flagInMainProcess';
 	    var HAS_GRADIENT_OR_PATTERN_BG = '__hasGradientOrPatternBg';
 	    var OPTION_UPDATED = '__optionUpdated';
@@ -789,7 +789,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            // TODO
 	            // Save total ecModel here for undo/redo (after restoring data and before processing data).
-	            // Undo (restoration of total ecModel) can be carried out in 'action' or outside API call.
+	            // Undo (restoration of total ecModel) can be carried output in 'action' or outside API call.
 
 	            // Create new coordinate system each update
 	            // In LineView may save the old coordinate system and use it to get the orignal point
@@ -3002,7 +3002,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * Caution: do not support clone Date, for performance consideration.
 	     * (There might be a large number of date in `series.data`).
-	     * So date should not be modified in and out of echarts.
+	     * So date should not be modified in and output of echarts.
 	     *
 	     * @param {*} source
 	     * @return {*} new
@@ -5597,7 +5597,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        mul : function (out, m1, m2) {
 	            // Consider matrix.mul(m, m2, m);
-	            // where out is the same as m2.
+	            // where output is the same as m2.
 	            // So use temp variable to escape error.
 	            var out0 = m1[0] * m2[0] + m1[2] * m2[1];
 	            var out1 = m1[1] * m2[0] + m1[3] * m2[1];
@@ -18419,7 +18419,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var proxy = this.proxy;
 	            proxy.setCursor && proxy.setCursor(hoveredTarget ? hoveredTarget.cursor : 'default');
 
-	            // Mouse out on previous hovered element
+	            // Mouse output on previous hovered element
 	            if (lastHoveredTarget && hoveredTarget !== lastHoveredTarget && lastHoveredTarget.__zr) {
 	                this.dispatchToElement(lastHovered, 'mouseout', event);
 	            }
@@ -19777,7 +19777,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            for (var i = 0; i < len; i++) {
 	                var clip = clips[i];
 	                var e = clip.step(time, delta);
-	                // Throw out the events need to be called after
+	                // Throw output the events need to be called after
 	                // stage.update, like destroy
 	                if (e) {
 	                    deferredEvents.push(e);
@@ -20179,7 +20179,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Mouse out handler
+	         * Mouse output handler
 	         * @inner
 	         * @param {Event} event
 	         */
@@ -21842,7 +21842,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * 清空该层画布
-	         * @param {boolean} clearAll Clear all with out motion blur
+	         * @param {boolean} clearAll Clear all with output motion blur
 	         */
 	        clear: function (clearAll) {
 	            var dom = this.dom;
@@ -22573,7 +22573,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * Get value. Return NaN if idx is out of range.
+	     * Get value. Return NaN if idx is output of range.
 	     * @param {string} dim Dim must be concrete name.
 	     * @param {number} idx
 	     * @param {boolean} stack
@@ -25414,7 +25414,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        niceTickExtent[idx] = Math.max(Math.min(niceTickExtent[idx], extent[1]), extent[0]);
 	    }
 
-	    // In some cases (e.g., splitNumber is 1), niceTickExtent may be out of extent.
+	    // In some cases (e.g., splitNumber is 1), niceTickExtent may be output of extent.
 	    helper.fixExtent = function (niceTickExtent, extent) {
 	        !isFinite(niceTickExtent[0]) && (niceTickExtent[0] = extent[0]);
 	        !isFinite(niceTickExtent[1]) && (niceTickExtent[1] = extent[1]);
@@ -25446,7 +25446,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // Avoid rounding error
 	            tick = roundNumber(tick + interval, intervalPrecision);
 	            if (tick === ticks[ticks.length - 1]) {
-	                // Consider out of safe float point, e.g.,
+	                // Consider output of safe float point, e.g.,
 	                // -3711126.9907707 + 2e-10 === -3711126.9907707
 	                break;
 	            }
@@ -27198,7 +27198,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    symbolProto.fadeOut = function (cb) {
 	        var symbolPath = this.childAt(0);
-	        // Avoid mistaken hover when fading out
+	        // Avoid mistaken hover when fading output
 	        this.silent = symbolPath.silent = true;
 	        // Not show text when animating
 	        symbolPath.style.text = '';
@@ -30549,7 +30549,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        if (// Pick a value on axis when initializing.
 	            value == null
-	            // If both `handle` and `dataZoom` are used, value may be out of axis extent,
+	            // If both `handle` and `dataZoom` are used, value may be output of axis extent,
 	            // where we should re-pick a value to keep `handle` displaying normally.
 	            || value > extent[1]
 	        ) {
@@ -36055,7 +36055,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var y = e.offsetY;
 
 	        // Only check on mosedown, but not mousemove.
-	        // Mouse can be out of target when mouse moving.
+	        // Mouse can be output of target when mouse moving.
 	        if (this.pointerChecker && this.pointerChecker(e, x, y)) {
 	            this._x = x;
 	            this._y = y;
@@ -36103,7 +36103,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return;
 	        }
 	        // Convenience:
-	        // Mac and VM Windows on Mac: scroll up: zoom out.
+	        // Mac and VM Windows on Mac: scroll up: zoom output.
 	        // Windows: scroll up: zoom in.
 	        var zoomDelta = e.wheelDelta > 0 ? 1.1 : 1 / 1.1;
 	        zoom.call(this, e, zoomDelta, e.offsetX, e.offsetY);
@@ -36119,7 +36119,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    function zoom(e, zoomDelta, zoomX, zoomY) {
 	        if (this.pointerChecker && this.pointerChecker(e, zoomX, zoomY)) {
-	            // When mouse is out of roamController rect,
+	            // When mouse is output of roamController rect,
 	            // default befavoius should be be disabled, otherwise
 	            // page sliding is disabled, contrary to expectation.
 	            eventTool.stop(e.event);
@@ -38395,7 +38395,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            if (!thisInvisible) {
 	                // If invisible, do not set visual, otherwise the element will
 	                // change immediately before animation. We think it is OK to
-	                // remain its origin color when moving out of the view window.
+	                // remain its origin color when moving output of the view window.
 	                cb();
 
 	                if (!element.__tmWillVisible) {
@@ -39795,8 +39795,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                viewRoot.hostTree.clearLayouts();
 
 	                // TODO
-	                // optimize: if out of view clip, do not layout.
-	                // But take care that if do not render node out of view clip,
+	                // optimize: if output of view clip, do not layout.
+	                // But take care that if do not render node output of view clip,
 	                // how to calculate start po
 
 	                var viewRootLayout = {
@@ -40897,7 +40897,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Breadth first traverse
 	     * @param {Function} cb
 	     * @param {module:echarts/data/Graph.Node} startNode
-	     * @param {string} [direction='none'] 'none'|'in'|'out'
+	     * @param {string} [direction='none'] 'none'|'in'|'output'
 	     * @param {*} [context]
 	     */
 	    graphProto.breadthFirstTraverse = function (
@@ -40910,7 +40910,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return;
 	        }
 
-	        var edgeType = direction === 'out'
+	        var edgeType = direction === 'output'
 	            ? 'outEdges' : (direction === 'in' ? 'inEdges' : 'edges');
 
 	        for (var i = 0; i < this.nodes.length; i++) {
@@ -44253,7 +44253,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            behavior === 'jump' && this._throttledDispatchExpand.debounceNextCall(model.get('axisExpandDebounce'));
 	            this._throttledDispatchExpand(
 	                behavior === 'none'
-	                    ? null // Cancle the last trigger, in case that mouse slide out of the area quickly.
+	                    ? null // Cancle the last trigger, in case that mouse slide output of the area quickly.
 	                    : {
 	                        axisExpandWindow: result.axisExpandWindow,
 	                        // Jumping uses animation, and sliding suppresses animation.
@@ -45011,7 +45011,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            axisExpandWidth: 50,      // FIXME '10%' ?
 	            axisExpandRate: 17,
 	            axisExpandDebounce: 50,
-	            // [out, in, jumpTarget]. In percentage. If use [null, 0.05], null means full.
+	            // [output, in, jumpTarget]. In percentage. If use [null, 0.05], null means full.
 	            // Do not doc to user until necessary.
 	            axisExpandSlideTriggerArea: [-0.15, 0.05, 0.4],
 	            axisExpandTriggerOn: 'click', // 'mousemove' or 'click'
@@ -46267,7 +46267,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        mousedown: function (e) {
 	            if (this._dragging) {
 	                // In case some browser do not support globalOut,
-	                // and release mose out side the browser.
+	                // and release mose output side the browser.
 	                handleDragEnd.call(this, e);
 	            }
 	            else if (!e.target || !e.target.draggable) {
@@ -57404,7 +57404,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            e = e || window.event;
 	            if (!self._enterable) {
 	                // Try trigger zrender event to avoid mouse
-	                // in and out shape too frequently
+	                // in and output shape too frequently
 	                var handler = zr.handler;
 	                eventUtil.normalizeEvent(container, e, true);
 	                handler.dispatch('mousemove', e);
@@ -60805,7 +60805,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         *
 	         * @override
 	         * @param  {Array} data  data
-	         * @param  {boolean} noClip  out of range
+	         * @param  {boolean} noClip  output of range
 	         * @return {Array}       point
 	         */
 	        dataToPoint: function (data, noClip) {
@@ -60855,7 +60855,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * Convert a time date item to (x, y) four point.
 	         *
 	         * @param  {Array} data  date[0] is date
-	         * @param  {boolean} noClip  out of range
+	         * @param  {boolean} noClip  output of range
 	         * @return {Object}       point
 	         */
 	        dataToRect: function (data, noClip) {
@@ -62011,11 +62011,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	            yAxisIndex: null,       // Default the first vertical category axis.
 
 	            filterMode: 'filter',   // Possible values: 'filter' or 'empty'.
-	                                    // 'filter': data items which are out of window will be removed.
+	                                    // 'filter': data items which are output of window will be removed.
 	                                    //           This option is applicable when filtering outliers.
-	                                    // 'empty': data items which are out of window will be set to empty.
+	                                    // 'empty': data items which are output of window will be set to empty.
 	                                    //          This option is applicable when user should not neglect
-	                                    //          that there are some data items out of window.
+	                                    //          that there are some data items output of window.
 	                                    // Taking line chart as an example, line will be broken in
 	                                    // the filtered points when filterModel is set to 'empty', but
 	                                    // be connected when set to 'filter'.
@@ -66224,7 +66224,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                })
 
 	                .on('mouseout', function () {
-	                    // When mouse is out of handle, hoverLink still need
+	                    // When mouse is output of handle, hoverLink still need
 	                    // to be displayed when realtime is set as false.
 	                    self._hovering = false;
 	                    !self._dragging && self._clearHoverLinkToSeries();
@@ -66270,7 +66270,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                linearMap(hoverRange[0], sizeExtent, dataExtent, true),
 	                linearMap(hoverRange[1], sizeExtent, dataExtent, true)
 	            ];
-	            // Consider data range is out of visualMap range, see test/visualMap-continuous.html,
+	            // Consider data range is output of visualMap range, see test/visualMap-continuous.html,
 	            // where china and india has very large population.
 	            hoverRange[0] < sizeExtent[0] && (valueRange[0] = -Infinity);
 	            hoverRange[1] > sizeExtent[1] && (valueRange[1] = Infinity);
@@ -68006,7 +68006,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * Filter data which is out of coordinateSystem range
+	     * Filter data which is output of coordinateSystem range
 	     * [dataFilter description]
 	     * @param  {module:echarts/coord/*} [coordSys]
 	     * @param  {Object} item
@@ -68982,7 +68982,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        var itemStyleEmphasis = itemStyle.emphasis || (itemStyle.emphasis = {});
 
-	        // Transfer label out
+	        // Transfer label output
 	        var label = opt.label || (opt.label || {});
 	        var labelNormal = label.normal || (label.normal = {});
 	        var excludeLabelAttr = {normal: 1, emphasis: 1};
@@ -70509,7 +70509,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // FIXME
 	            listComponentHelper.addBackground(group, toolboxModel);
 
-	            // Adjust icon title positions to avoid them out of screen
+	            // Adjust icon title positions to avoid them output of screen
 	            group.eachChild(function (icon) {
 	                var titleText = icon.__title;
 	                var hoverStyle = icon.hoverStyle;
@@ -70977,7 +70977,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * If a block is tsv format
 	     */
 	    function isTSVFormat(block) {
-	        // Simple method to find out if a block is tsv format
+	        // Simple method to find output if a block is tsv format
 	        var firstLine = block.slice(0, block.indexOf('\n'));
 	        if (firstLine.indexOf(ITEM_SPLITER) >= 0) {
 	            return true;

@@ -20,8 +20,10 @@ public class WordCountDriver {
     public static void main(String[] args) throws Exception {
         //通过job来封装本次的mr的相关信息
         Configuration conf = new Configuration();
+        conf.set("mapreduce.framework.name", "local");
         Job job = Job.getInstance(conf);
-
+        //指定运行的主类
+        job.setJarByClass(WordCountDriver.class);
         //指定我这个 job 所在的 jar 包
         job.setMapperClass(WordCountMapper.class);
         job.setReducerClass(WordCountReducer.class);
@@ -35,9 +37,9 @@ public class WordCountDriver {
         job.setOutputValueClass(IntWritable.class);
 
         //指定的mr的输入的数据的路径和最终的输出的结果的存放的位置
-        FileInputFormat.setInputPaths(job, "/root/word/input");
+        FileInputFormat.setInputPaths(job, "E:\\GItHub_project\\Big_Data\\hadoop_parent\\src\\main\\resources\\input");
         //指定处理完成之后的结果所保存的位置
-        FileOutputFormat.setOutputPath(job, new Path("/root/word/output"));
+        FileOutputFormat.setOutputPath(job, new Path("E:\\GItHub_project\\Big_Data\\hadoop_parent\\src\\main\\resources\\output"));
         //向 yarn 集群提交这个 job 表示的监控打印的job 的计划
         boolean res = job.waitForCompletion(true);
         System.exit(res ? 0 : 1);
