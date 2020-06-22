@@ -17,6 +17,7 @@
         <module>OfflineRecommender</module>
         <module>StreamingRecommender</module>
         <module>ContentRecommender</module>
+        <module>Data_Processing</module>
     </modules>
 
     <dependencyManagement>
