@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>Recommender</module>
+        <module>Recommender_Web</module>
     </modules>
 
     <properties>
