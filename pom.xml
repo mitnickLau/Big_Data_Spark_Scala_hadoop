@@ -11,6 +11,7 @@
     <modules>
         <module>Telecom_customer_service</module>
         <module>hadoop_parent</module>
+        <module>Movie_recommendation_system</module>
     </modules>
 
 
