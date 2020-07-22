@@ -2,26 +2,23 @@ package com.shanghai.university.dataflume.etl.common;
 
 /**
  * 全局常量类
- *
+ * 
  * @author root
+ *
  */
 public class GlobalConstants {
-
     /**
      * 一天的毫秒数
      */
     public static final int DAY_OF_MILLISECONDS = 86400000;
-
     /**
      * 定义的运行时间变量名
      */
     public static final String RUNNING_DATE_PARAMES = "RUNNING_DATE";
-
     /**
      * 默认值
      */
     public static final String DEFAULT_VALUE = "unknown";
-
     /**
      * 维度信息表中指定全部列值
      */

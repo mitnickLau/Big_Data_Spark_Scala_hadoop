@@ -2,12 +2,12 @@ package com.shanghai.university.dataflume.etl.common;
 
 /**
  * 日期类型枚举类
- *
+ * 
  * @author root
+ *
  */
 public enum DateEnum {
-    YEAR("year"), SEASON("season"), MONTH("month"), WEEK("week"), DAY("day"), HOUR(
-            "hour");
+    YEAR("year"), SEASON("season"), MONTH("month"), WEEK("week"), DAY("day"), HOUR("hour");
 
     public final String name;
 
@@ -17,7 +17,7 @@ public enum DateEnum {
 
     /**
      * 根据属性name的值获取对应的type对象
-     *
+     * 
      * @param name
      * @return
      */

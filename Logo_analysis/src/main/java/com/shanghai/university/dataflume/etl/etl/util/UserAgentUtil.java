@@ -1,9 +1,11 @@
 package com.shanghai.university.dataflume.etl.etl.util;
 
-import java.io.IOException;
-
 import cz.mallat.uasparser.OnlineUpdater;
 import cz.mallat.uasparser.UASparser;
+
+import java.io.IOException;
+
+
 
 /**
  * 解析浏览器的user agent的工具类，内部就是调用这个uasparser jar文件

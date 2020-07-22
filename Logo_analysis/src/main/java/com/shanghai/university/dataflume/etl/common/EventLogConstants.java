@@ -4,15 +4,16 @@ package com.shanghai.university.dataflume.etl.common;
  * 定义日志收集客户端收集得到的用户数据参数的name名称<br/>
  * 以及event_logs这张hbase表的结构信息<br/>
  * 用户数据参数的name名称就是event_logs的列名
- *
+ * 
  * @author root
+ *
  */
 public class EventLogConstants {
-
     /**
      * 事件枚举类。指定事件的名称
-     *
+     * 
      * @author root
+     *
      */
     public static enum EventEnum {
         LAUNCH(1, "launch event", "e_l"), // launch事件，表示第一次访问
@@ -35,7 +36,7 @@ public class EventLogConstants {
 
         /**
          * 获取匹配别名的event枚举对象，如果最终还是没有匹配的值，那么直接返回null。
-         *
+         * 
          * @param alias
          * @return
          */
@@ -52,12 +53,12 @@ public class EventLogConstants {
     /**
      * 表名称
      */
-    public static final String HBASE_NAME_EVENT_LOGS = "eventlog";
+    public static final String HBASE_NAME_EVENT_LOGS = "event_logs";
 
     /**
      * event_logs表的列簇名称
      */
-    public static final String EVENT_LOGS_FAMILY_NAME = "log";
+    public static final String EVENT_LOGS_FAMILY_NAME = "info";
 
     /**
      * 日志分隔符

@@ -1,22 +1,18 @@
 package com.shanghai.university.dataflume.etl.etl.util;
 
+import com.shanghai.university.dataflume.etl.common.EventLogConstants;
+import com.shanghai.university.dataflume.etl.util.TimeUtil;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
-
-import com.sxt.common.EventLogConstants;
-import com.sxt.etl.util.IPSeekerExt.RegionInfo;
-import com.sxt.etl.util.UserAgentUtil.UserAgentInfo;
-import com.sxt.util.TimeUtil;
-
 /**
  * 处理日志数据的具体工作类
- * 
- * @author root
  *
+ * @author root
  */
 public class LoggerUtil {
     private static final Logger logger = Logger.getLogger(LoggerUtil.class);
@@ -25,7 +21,7 @@ public class LoggerUtil {
     /**
      * 处理日志数据logText，返回处理结果map集合<br/>
      * 如果logText没有指定数据格式，那么直接返回empty的集合
-     * 
+     *
      * @param logText
      * @return
      */
@@ -58,13 +54,13 @@ public class LoggerUtil {
 
     /**
      * 处理ip地址
-     * 
+     *
      * @param clientInfo
      */
-    private static void handleIp(Map<String,String> clientInfo) {
+    private static void handleIp(Map<String, String> clientInfo) {
         if (clientInfo.containsKey(EventLogConstants.LOG_COLUMN_NAME_IP)) {
             String ip = clientInfo.get(EventLogConstants.LOG_COLUMN_NAME_IP);
-            RegionInfo info = ipSeekerExt.analyticIp(ip);
+            IPSeekerExt.RegionInfo info = ipSeekerExt.analyticIp(ip);
             if (info != null) {
                 clientInfo.put(EventLogConstants.LOG_COLUMN_NAME_COUNTRY, info.getCountry());
                 clientInfo.put(EventLogConstants.LOG_COLUMN_NAME_PROVINCE, info.getProvince());
@@ -75,12 +71,12 @@ public class LoggerUtil {
 
     /**
      * 处理浏览器的userAgent信息
-     * 
+     *
      * @param clientInfo
      */
     private static void handleUserAgent(Map<String, String> clientInfo) {
         if (clientInfo.containsKey(EventLogConstants.LOG_COLUMN_NAME_USER_AGENT)) {
-            UserAgentInfo info = UserAgentUtil.analyticUserAgent(clientInfo.get(EventLogConstants.LOG_COLUMN_NAME_USER_AGENT));
+            UserAgentUtil.UserAgentInfo info = UserAgentUtil.analyticUserAgent(clientInfo.get(EventLogConstants.LOG_COLUMN_NAME_USER_AGENT));
             if (info != null) {
                 clientInfo.put(EventLogConstants.LOG_COLUMN_NAME_OS_NAME, info.getOsName());
                 clientInfo.put(EventLogConstants.LOG_COLUMN_NAME_OS_VERSION, info.getOsVersion());
@@ -92,7 +88,7 @@ public class LoggerUtil {
 
     /**
      * 处理请求参数
-     * 
+     *
      * @param requestBody
      * @param clientInfo
      */

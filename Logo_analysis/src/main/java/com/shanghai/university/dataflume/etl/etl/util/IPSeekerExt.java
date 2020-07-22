@@ -1,7 +1,7 @@
 package com.shanghai.university.dataflume.etl.etl.util;
 
-import com.sxt.common.GlobalConstants;
-import com.sxt.etl.util.ip.IPSeeker;
+import com.shanghai.university.dataflume.etl.common.GlobalConstants;
+import com.shanghai.university.dataflume.etl.etl.util.ip.IPSeeker;
 
 /**
  * 定义具体的ip解析的类，最终调用IpSeeker类(父类)<br/>
