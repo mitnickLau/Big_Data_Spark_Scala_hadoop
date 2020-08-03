@@ -10,6 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Logo_analysis</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>data_collection</module>
+        <module>data_web</module>
+        <module>data_mapperreduce</module>
+        <module>data_etl</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -71,6 +78,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
