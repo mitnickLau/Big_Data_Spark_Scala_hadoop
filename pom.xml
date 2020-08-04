@@ -13,6 +13,7 @@
         <module>hadoop_parent</module>
         <module>Movie_recommendation_system</module>
         <module>Logo_analysis</module>
+        <module>Electronic_commerce_recommendation_system</module>
     </modules>
 
 
