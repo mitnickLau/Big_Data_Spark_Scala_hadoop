@@ -13,6 +13,12 @@
     <packaging>pom</packaging>
     <modules>
         <module>Data_Loader</module>
+        <module>Content_Recommender</module>
+        <module>ItemCF_Recommender</module>
+        <module>Kafka_Streaming</module>
+        <module>Offline_Recommender</module>
+        <module>Online_Recommender</module>
+        <module>Statistics_Recommender</module>
     </modules>
 
     <dependencyManagement>
