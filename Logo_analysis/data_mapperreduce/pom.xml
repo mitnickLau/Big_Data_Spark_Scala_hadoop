@@ -11,5 +11,11 @@
 
     <artifactId>data_mapperreduce</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.shanghaiuniversity</groupId>
+            <artifactId>data_etl</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>
