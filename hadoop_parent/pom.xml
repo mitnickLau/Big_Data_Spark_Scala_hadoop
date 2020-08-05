@@ -57,7 +57,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.shanghaiuniversity.mr.WordCountDriver</mainClass>
+                            <mainClass>com.shanghaiuniversity.mr.WordCount.WordCountDriver</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

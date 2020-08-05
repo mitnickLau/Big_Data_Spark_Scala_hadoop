@@ -5,7 +5,7 @@
  * Date:     2020/6/19 14:46
  * Description: Reducder
  */
-package com.shanghaiuniversity.mr;
+package com.shanghaiuniversity.mr.WordCount;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;

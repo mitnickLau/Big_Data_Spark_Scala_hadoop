@@ -6,7 +6,7 @@
  * Description: mr的运行的主类 本类中组合和一些程序的运行的所需要的信息
  * 比如是使用的是mapper 类 那个reduce类 输入数据在哪里 输出数据在什么地方
  */
-package com.shanghaiuniversity.mr;
+package com.shanghaiuniversity.mr.WordCount;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

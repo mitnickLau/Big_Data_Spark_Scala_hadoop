@@ -5,7 +5,7 @@
  * Date:     2020/6/19 13:57
  * Description: 单词统计类的
  */
-package com.shanghaiuniversity.mr;
+package com.shanghaiuniversity.mr.WordCount;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
